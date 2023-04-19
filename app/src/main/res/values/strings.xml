@@ -3,4 +3,6 @@
     <string name="go_back">Go Back</string>
     <string name="activity_two_text">I used to know someone called</string>
     <string name="activity_two_heading">This is Activity Two</string>
+    <string name="hint">Type something here</string>
+    <string name="submit">Submit</string>
 </resources>
