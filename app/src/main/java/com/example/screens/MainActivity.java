@@ -2,7 +2,9 @@ package com.example.screens;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.screens.databinding.ActivityMainBinding;
@@ -17,6 +19,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         goToActivityTwo = binding.activityMainGoToActivityTwo;
+        goToActivityTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeActivity();
+            }
+        });
+    }
 
+    private void changeActivity() {
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
     }
 }
