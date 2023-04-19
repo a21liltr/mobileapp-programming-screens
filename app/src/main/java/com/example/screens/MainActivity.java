@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.screens.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private Button goToActivityTwo;
+    private EditText text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +22,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         goToActivityTwo = binding.activityMainGoToActivityTwo;
+        text = binding.editText;
         goToActivityTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeActivity();
+                String input = text.getText().toString();
+                passData(input);
             }
         });
     }
 
-    private void changeActivity() {
+    private void passData(String input) {
+        String str = input;
         Intent intent = new Intent(this, SecondActivity.class);
+        intent.putExtra("keyInput", str);
         startActivity(intent);
     }
 }
