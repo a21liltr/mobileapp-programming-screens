@@ -2,4 +2,5 @@
     <string name="app_name">Screens</string>
     <string name="go_back">Go Back</string>
     <string name="activity_two_text">I used to know someone called</string>
+    <string name="activity_two_heading">This is Activity Two</string>
 </resources>
