@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String input = text.getText().toString();
-                text.getText().clear();
                 passData(input);
             }
         });
