@@ -13,6 +13,7 @@
         android:gravity="center_horizontal"
         android:hint="@string/hint"
         android:maxEms="10"
+        android:minHeight="48dp"
         android:minEms="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
