@@ -4,8 +4,9 @@
 Forked down project and created a new layout resource file in layout folder called activity_two.xml, this will be used as a layout of something similar to a second page when compared to a website.
 
 A new class is then created and given the name SecondActivity.java to be descriptive of what its purpose will be.
+MainActivity is set as parent activity for SecondActivity.
 
-Viewbinding is added for more easily read code.
+Viewbinding is used to get around without using R.id.*view*.
 
 Created a method for changing activities in MainActivity.java, going from main to activity two.
 This is just for test purposes to see how Intents work.
@@ -16,7 +17,7 @@ An EditText component is added to main activity, where users can make an input w
 
 ![](landingPage.png)
 
-This is achieved using the intent putExtra method to bind a name (chosen keyword) to the data that is to be passed to activity two. See code:
+This is achieved using the intent putExtra method to bind a name (keyword) to the data that is to be passed to activity two. See code:
 
 ```
 text = binding.editText;
@@ -32,7 +33,8 @@ String str = input;
 }
 ```
 
-In SecondActivity, getIntent.getStringExtra with the chosen keyword is used to get and save the data in a String variable. This is then used to set the text of a TextView.
+In SecondActivity, getIntent.getStringExtra with the keyword 'keyInput' is used to get and save the data in a String variable.
+This is then used to set the text of a TextView.
 
 ```
 private TextView output;
@@ -42,9 +44,11 @@ String input = getIntent().getStringExtra("keyInput");
 output.setText(input);
 ```
 
-User can now input text in EditText component in main activity and click a button, which then starts activity two and displays the same text that the used had input earlier. See picture below:
+User can now input text in EditText component in main activity and click a button, which then starts activity two and displays the same text that the used had input earlier.
+See picture below:
 
 ![](input.png)
 ![](activityTwo.png)
 
 When clicking a button with value "Go Back" in activity two, the activity will be closed and the user will be returned to the main activity.
+The input in the EditText will be still be there.
