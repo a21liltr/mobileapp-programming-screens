@@ -9,7 +9,7 @@ MainActivity is set as parent activity for SecondActivity.
 Viewbinding is used to get around without using R.id.*view*.
 
 Created a method for changing activities in MainActivity.java, going from main to activity two.
-This is just for test purposes to see how Intents work.
+This is just for test purposes to see how Intents work. This method is later changed to a method that passes data.
 
 In SecondActivity.java, an onClick method is added to call finish(); method which is used to close activity two when the user wants to go back to the first activity ("page").
 
@@ -17,7 +17,8 @@ An EditText component is added to main activity, where users can make an input w
 
 ![](landingPage.png)
 
-This is achieved using the intent putExtra method to bind a name (keyword) to the data that is to be passed to activity two. See code:
+This is achieved by modifying the method used to *only* change activities and adding intent putExtra method to bind a name (keyword) to the data that is to be passed to SecondActivity.
+See code:
 
 ```
 text = binding.editText;
@@ -33,7 +34,7 @@ String str = input;
 }
 ```
 
-In SecondActivity, getIntent.getStringExtra with the keyword 'keyInput' is used to get and save the data in a String variable.
+In SecondActivity, getIntent.getStringExtra with the same keyword 'keyInput' is used to get and save the data in a String variable.
 This is then used to set the text of a TextView.
 
 ```
@@ -44,7 +45,7 @@ String input = getIntent().getStringExtra("keyInput");
 output.setText(input);
 ```
 
-User can now input text in EditText component in main activity and click a button, which then starts activity two and displays the same text that the used had input earlier.
+User can now input text in EditText component in main activity and click a button, which then starts activity two and displays the same text that the user had input earlier.
 See picture below:
 
 ![](input.png)
